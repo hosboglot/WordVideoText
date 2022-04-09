@@ -3,7 +3,8 @@ import random
 import vk_api
 from vk_api import VkUpload
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
-from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
+from MyLongPoll import MyVkLongPoll
+from vk_api.bot_longpoll import VkBotEventType
 from main import write_text
 
 with open("token.txt", 'r') as tk:
@@ -12,7 +13,7 @@ with open("token.txt", 'r') as tk:
 vk_session = vk_api.VkApi(token=token)
 vk = vk_session.get_api()
 upload = VkUpload(vk_session)
-longpoll = VkBotLongPoll(vk_session, "212535184")
+longpoll = MyVkLongPoll(vk_session, "212535184")
 
 
 def send_msg(msg, att=''):
